@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/shop.css">
+</head>
+
+<body>
+    <nav>
+        <h1 style="font-size: 36px;font-weight: 500;margin-block: 5px;">Shop</h1>
+        <div>
+            <a href="">home</a>
+            <a href="/user/carts">cart</a>
+            <a href="">orders</a>
+        </div>
+    </nav>
+
+    <div class="outer-box">
+        <div class="left-box"></div>
+        <div class="right-box">
+
+            <% products.forEach(product=>{ %>
+
+
+                <div class="pdt">
+                    <div style="background-color:<%= product.bgcolor %>;" class="img-box"><img style="height: 100%;width: 100%;"
+                            src="<%= product.picture %>" alt="">
+                    </div>
+                    <div style="background-color:<%= product.panelcolor %>;" class="panel">
+                        <div style="color:<%= product.textcolor %>;" class="pdt-name">
+                            <%= product.name %>
+                        </div>
+                        <div>
+                            <span style="font-size: 14px;">₹ <%= product.price %></span>
+                            <a style="font-size: 14px;margin-left: 10px;" href="/user/product/<%= product._id %>">add</a>
+                        </div>
+                    </div>
+                </div>
+
+                <% }) %>
+
+        </div>
+    </div>
+</body>
+
+</html>

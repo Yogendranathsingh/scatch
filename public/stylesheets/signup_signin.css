@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    margin-block:10px;
+    outline: none;
+    display: block;
+    padding-inline: 5px;
+    padding-block: 2px;
+}
+
+.outer-box{
+    height:100vh;
+    background-color:rgb(242, 247, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.inner-box{
+    display: flex;
+    gap: 50px;
+}
+
+.signup-box, .signin-box{
+    height: 200px;
+    width: 350px;
+    background-color: white;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/carts.css">
+</head>
+
+<body>
+    <nav>
+        <h1 style="font-size: 36px;font-weight: 500;margin-block: 5px;">Carts</h1>
+        <div>
+            <a href="/user/shop">home</a>
+            <a href="">cart</a>
+            <a href="">orders</a>
+        </div>
+    </nav>
+
+    <div class="product-container">
+        <% products.forEach(product=>{ %>
+
+
+            <div class="pdt">
+                <div style="background-color:<%= product.bgcolor %>;" class="img-box"><img
+                        style="height: 100%;width: 100%;" src="<%= product.picture %>" alt="">
+                </div>
+                <div style="background-color:<%= product.panelcolor %>;" class="panel">
+                    <div style="color:<%= product.textcolor %>;" class="pdt-name">
+                        <%= product.name %>
+                    </div>
+                    <div>
+                         <span style="font-size: 14px;">₹ <%= product.price %></span>
+                    </div>
+                </div>
+            </div>
+
+            <% }) %>
+    </div>
+
+    <div>total price: <%= total %></div>
+
+</body>
+
+</html>

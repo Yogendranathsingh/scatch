@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/signup_signin.css">
+</head>
+
+<style>
+
+   .popup-box{
+      height: 50px;
+      width: 350px;
+      border: 1px solid gray;
+      background-color: rgb(235, 245, 250);
+      border-radius: 10px;
+      text-align: center;
+      align-content: center;
+      position: absolute;
+      left:40%;
+      top:0px;
+      transform: translateX(0) translateY(0);
+      /* transform: translateX(0) translateY(-200px); */
+      transition: transform 2s ease 0s;
+   }
+
+   /* .active{
+    transform: translateX(0) translateY(0);
+   } */
+
+</style>
+
+<body>
+    <% if(success_msg!= ''){ %>
+        <div class="popup-box" style="color:green;"><%= success_msg %></div>
+    <% }else if(error_msg!=''){ %>
+        <div class="popup-box" style="color:red;"><%= error_msg %></div>
+    <% } %>
+    
+    <div class="outer-box">
+        <h1 style="font-size: 40px;font-weight: 500;">welcome to scatch</h1>
+        <div class="inner-box">
+            <div class="signup-box">
+                <form action="/user/signup" method="post">
+                    <input type="text" placeholder="name" name="name">
+                    <input type="email" placeholder="email" name="email">
+                    <input type="password" placeholder="password" name="password">
+                    <input style="width: fit-content;" type="submit" value="signup">
+                </form>
+            </div>
+            <div class="signin-box">
+                <form action="/user/signin" method="post">
+                    <input type="email" placeholder="email" name="email">
+                    <input type="password" placeholder="password" name="password">
+                    <input style="width: fit-content;" type="submit" value="signin">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // window.addEventListener('load',function(){
+        //     const popupBox= document.querySelector('.popup-box')
+        //     popupBox.classList.add('active')
+
+        //     // setTimeout(function(){
+        //     //     popupBox.classList.remove('active')
+        //     // },2000)
+        // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/craete_product.css">
+</head>
+
+<body>
+
+    <nav>
+        <h1 style="font-size: 36px;font-weight: 500;margin-block: 5px;">admin panel</h1>
+        <div>
+            <a href="">home</a>
+            <a href="">cart</a>
+            <a href="">orders</a>
+        </div>
+    </nav>
+
+    <div class="outer-box">
+        <div class="left-box"></div>
+        <div class="right-box">
+            <div style="font-size: 28px;margin-bottom: 20px;">create new product</div>
+            <hr>
+            <form action="/owner/create" method="post" enctype="multipart/form-data">
+                <div class="pdt-details">
+                    <div style="font-size: 28px;margin-top: 20px;">product details</div>
+                    <input type="file" name="picture">
+                    <input type="text" name="name" placeholder="name">
+                    <input type="number" name="price" placeholder="price">
+                    <input type="number" name="discount" placeholder="discount">
+                </div>
+
+                <div class="panel-details">
+                    <div style="font-size: 28px;margin-top: 20px;">panel details</div>
+                    <input type="text" name="bgcolor" placeholder="background color">
+                    <input type="text" name="panelcolor" placeholder="panel color">
+                    <input type="text" name="textcolor" placeholder="text color">
+                    <input type="submit" value="craete product">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

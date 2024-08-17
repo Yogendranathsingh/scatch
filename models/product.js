@@ -7,7 +7,7 @@ const productschema= mongoose.Schema({
     discount:Number,
     bgcolor:String,
     textcolor:String,
-    pannelcolor:String
+    panelcolor:String
 })
 
 module.exports= mongoose.model('product',productschema)

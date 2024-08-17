@@ -1,6 +1,23 @@
 const express= require('express')
 const app= express()
 const path= require('path')
+const cookieparser= require('cookie-parser')
+
+const session= require('express-session')
+const flash= require('connect-flash')
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(flash());
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg','');
+    res.locals.error_msg = req.flash('error_msg','');
+    next();
+});
+
+app.use(cookieparser())
 
 const db= require('./config/mongoose_connection')
 
@@ -21,8 +38,11 @@ app.use('/user',userrouter)
 app.use('/product',productrouter)
 app.use('/owner',ownerrouter)
 
+
+
+
 app.get('/',(req,res)=>{
-    res.render('index')
+    res.render('signup_signin')
 })
 
 

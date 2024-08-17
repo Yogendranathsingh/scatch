@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input{
+    display: block;
+    padding:2px 5px;
+    margin-block: 5px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: azure;
+}
+nav a{
+    display: inline-block;
+    padding-block: 2px;
+    padding-inline: 5px;
+    margin-block: 5px;
+    margin-inline: 10px;
+}
+
+.outer-box{
+    display: flex;
+    min-height: 700px;
+    border: 1px solid red;
+}
+
+.left-box{
+    width: 20%;
+    height:inherit;
+}
+
+.right-box{
+    width: 80%;
+    height:inherit;
+    border: 1px solid red;
+    padding: 30px;
+}
